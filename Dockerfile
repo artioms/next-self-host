@@ -1,4 +1,4 @@
-FROM node:current-alphine3.21 AS base
+FROM node:22.1.0-alphine AS base
 
 # Stage 1: Install dependencies
 FROM base AS deps
