@@ -9,6 +9,8 @@ RUN bun install --frozen-lockfile
 # Stage 2: Build the application
 FROM base AS builder
 WORKDIR /app
+ARG DATABASE_URL
+ENV DATABASE_URL=${DATABASE_URL}
 COPY --from=deps /app/node_modules ./node_modules
 COPY . .
 RUN bun run build
